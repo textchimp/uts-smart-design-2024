@@ -549,6 +549,11 @@ println( "Button timer: ", buttonTimer ); // Will print  "Button timer: 500"
 					{ src: '../reveal/plugin/highlight/highlight.js', async: true }
 				]
 			});
+
+			// Turn off fragments for editing, when `?nofrag` is used in URL
+			if ((new URLSearchParams(window.location.search)).has('nofrag') ){
+				document.querySelectorAll('.fragment').forEach(n => n.classList.remove('fragment'));
+			}
 		</script>
 	</body>
 </html>
